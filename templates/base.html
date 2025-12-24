@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ title if title else "SamanBuddy" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="{{ url_for('index') }}">SamanBuddy</a>
+            <nav>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('cart_page') }}">Cart</a>
+                <a href="{{ url_for('signup_page') }}">Signup</a>
+                <a href="{{ url_for('login_page') }}">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© {{ (2025) }} SamanBuddy</div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
